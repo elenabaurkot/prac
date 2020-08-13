@@ -1,0 +1,45 @@
+body {
+  margin: 0rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(97, 97, 208, 1) 42%,
+    rgba(0, 212, 255, 1) 92%
+  );
+}
+header {
+  background-color: rgba(2, 0, 36, 0.3);
+  color: white;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.flex-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+h1 {
+  text-align: center;
+}
+
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 30%;
+}
+
+.box {
+  background-color: white;
+  border-radius: 1.5rem;
+  border: 3px rgb(42, 3, 159) solid;
+}
+
+p {
+  line-height: 2rem;
+}
