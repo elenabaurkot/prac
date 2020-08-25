@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Rock Paper Scissors Logic -->
+    <script>
+      // Sets playAgain equal to "y"
+      let playAgain = 'y';
+      // As long as the user wants to play again, continue executing the game loop
+      // do {
+      // Sets 3 rounds for game (best out of 3)
+      for (let i = 0; i < 3; i++) {
+        console.log(i);
+
+        // Get computer pick
+        let cRand = Math.floor(Math.random() * 3) + 1;
+        let cPick;
+        // Based on the randomly generated number, assign the computer pick
+        switch (cRand) {
+          case 1:
+            cPick = 'rock';
+            break;
+          case 2:
+            cPick = 'paper';
+            break;
+          case 3:
+            cPick = 'scissors';
+            break;
+          default:
+            cPick = 'none';
+        }
+        console.log(`Comp pick = ${cPick}`);
+
+        // Get user pick
+
+        // Compare answers (could use if else or switch statement here)
+
+        // Ask user if they want to play again
+        // If "y", game restarts
+        // If "n", game ends
+      }
+      // } while ((playAgain = 'y'));
+    </script>
+  </body>
+</html>
