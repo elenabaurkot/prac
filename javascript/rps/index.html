@@ -10,41 +10,79 @@
     <!-- Rock Paper Scissors Logic -->
     <script>
       // Sets playAgain equal to "y"
-      let playAgain = 'y';
+      let cScore = 0;
+      let uScore = 0;
+      let playAgain = true;
+
+      console.log("Welcome to the game, let's play best out of three");
+
       // As long as the user wants to play again, continue executing the game loop
-      // do {
-      // Sets 3 rounds for game (best out of 3)
-      for (let i = 0; i < 3; i++) {
-        console.log(i);
+      do {
+        // Sets 3 rounds for game (best out of 3)
+        for (let i = 0; i < 3; i++) {
+          console.log(i);
 
-        // Get computer pick
-        let cRand = Math.floor(Math.random() * 3) + 1;
-        let cPick;
-        // Based on the randomly generated number, assign the computer pick
-        switch (cRand) {
-          case 1:
-            cPick = 'rock';
-            break;
-          case 2:
-            cPick = 'paper';
-            break;
-          case 3:
-            cPick = 'scissors';
-            break;
-          default:
-            cPick = 'none';
+          // Get computer pick
+          let cRand = Math.floor(Math.random() * 3) + 1;
+          let cPick;
+          // Based on the randomly generated number, assign the computer pick
+          switch (cRand) {
+            case 1:
+              cPick = 'rock';
+              break;
+            case 2:
+              cPick = 'paper';
+              break;
+            case 3:
+              cPick = 'scissors';
+              break;
+            default:
+              cPick = 'none';
+          }
+          console.log(`Comp pick = ${cPick}`);
+
+          // Get user pick
+          let uPick = prompt('rock, paper or scissors?');
+          console.log(`User pick = ${uPick}`);
+
+          // Compare answers
+          // In case of tie
+          if (uPick === cPick) {
+            console.log('You tied!');
+            // in event of tie, subtract one from the loop count because if you are playing best out of three, tie does not count as a round
+            i = i - 1;
+            // All cases where user wins
+          } else if (
+            (uPick === 'rock' && cPick === 'scissors') ||
+            (uPick === 'paper' && cPick === 'rock') ||
+            (uPick === 'scissors' && cPick === 'paper')
+          ) {
+            console.log('you win this round');
+            uScore++;
+            // All other possible cases computer wins
+          } else {
+            console.log('computer wins this round');
+            cScore++;
+          }
+
+          // Updated score
+          console.log(
+            `Current score: \n computer: ${cScore} \n user: ${uScore}`
+          );
         }
-        console.log(`Comp pick = ${cPick}`);
-
-        // Get user pick
-
-        // Compare answers (could use if else or switch statement here)
+        // Alert winner
+        if (cScore > uScore) {
+          console.log('computer won this time');
+        } else {
+          console.log("You're the winner!");
+        }
 
         // Ask user if they want to play again
-        // If "y", game restarts
-        // If "n", game ends
-      }
-      // } while ((playAgain = 'y'));
+        playAgain = confirm('Do you want to play again?');
+      } while (playAgain === true);
+
+      // Add code for game end in case user doesn't want to play again
+      console.log('Nice playing with you!');
     </script>
   </body>
 </html>
