@@ -9,9 +9,10 @@
   <body>
     <!-- Rock Paper Scissors Logic -->
     <script>
-      // Sets playAgain equal to "y"
+      // Set user and computer scores to zero to start game
       let cScore = 0;
       let uScore = 0;
+      // Play again equals true
       let playAgain = true;
 
       console.log("Welcome to the game, let's play best out of three");
@@ -20,25 +21,12 @@
       do {
         // Sets 3 rounds for game (best out of 3)
         for (let i = 0; i < 3; i++) {
-          console.log(i);
-
           // Get computer pick
-          let cRand = Math.floor(Math.random() * 3) + 1;
-          let cPick;
-          // Based on the randomly generated number, assign the computer pick
-          switch (cRand) {
-            case 1:
-              cPick = 'rock';
-              break;
-            case 2:
-              cPick = 'paper';
-              break;
-            case 3:
-              cPick = 'scissors';
-              break;
-            default:
-              cPick = 'none';
-          }
+          let cRand = Math.floor(Math.random() * 3);
+          // Array of three game choices
+          var gamePicks = ['rock', 'paper', 'scissors'];
+          // User randomly generated number in the picks array to get the computer pick
+          let cPick = gamePicks[cRand];
           console.log(`Comp pick = ${cPick}`);
 
           // Get user pick
@@ -81,7 +69,7 @@
         playAgain = confirm('Do you want to play again?');
       } while (playAgain === true);
 
-      // Add code for game end in case user doesn't want to play again
+      // If user doesn't want to play again, end game
       console.log('Nice playing with you!');
     </script>
   </body>
