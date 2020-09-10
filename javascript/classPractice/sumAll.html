@@ -8,17 +8,38 @@
   </head>
   <body>
     <script>
+      // Function that takes input and adds all the numbers between zero and the inputed number
       function sumAll(num) {
         let sum = 0;
 
-        for (let i = num; i > 0; i--) {
-          sum += i;
+        // If user enters negative number
+        if (num < 0) {
+          // find the absolute value of the number
+          let numPos = Math.abs(num);
+          // Add all the numbers between zero up to (including) the inputed value
+          for (let i = numPos; i > 0; i--) {
+            sum += i;
+          }
+          // Take the negative value of the numbers
+          sum = -sum;
+        }
+        // If user enters positive number or zero
+        else {
+          for (let i = num; i > 0; i--) {
+            sum += i;
+          }
         }
         return sum;
       }
 
-      let finalSum = sumAll(3);
+      let finalSum = sumAll(10);
       console.log(finalSum);
+
+      let finalSum1 = sumAll(-10);
+      console.log(finalSum1);
+
+      let finalSum0 = sumAll(0);
+      console.log(finalSum0);
     </script>
   </body>
 </html>
