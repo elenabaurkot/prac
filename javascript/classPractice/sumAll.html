@@ -14,14 +14,9 @@
 
         // If user enters negative number
         if (num < 0) {
-          // find the absolute value of the number
-          let numPos = Math.abs(num);
-          // Add all the numbers between zero up to (including) the inputed value
-          for (let i = numPos; i > 0; i--) {
+          for (let i = num; i < 0; i++) {
             sum += i;
           }
-          // Take the negative value of the numbers
-          sum = -sum;
         }
         // If user enters positive number or zero
         else {
